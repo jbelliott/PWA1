@@ -81,11 +81,14 @@
     console.log(wordCount(ipsum));
 
     //--------------------------------------------------------
- //   console.log("4. sentence char count");
+    console.log("4. sentence char count");
 
-        //PUT FUNCTION HERE
+        function charCount(countInput){
+            totalChars = countInput.length;
+            return totalChars;
+        }
 
-  //  console.log(charCount(ipsum));
+    console.log(charCount(ipsum));
 
     //--------------------------------------------------------
 //
