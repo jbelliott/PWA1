@@ -1,13 +1,15 @@
  /* Created by JB Elliott
  Due April 3, 2014
- The Duel - Part I
+ The Duel - Part II
  */
 
      //Define Starting Variables, Player One, Array
+     //Array values are [name, health, max dmg, min dmg]
      var playerOne = ["Spiderman", 100, 30, 15];
 
 
      //Define Starting Variables, Player Two, Array
+     //Array values are [name, health, max dmg, min dmg]
      var playerTwo = ["Batman", 100, 30, 15];
 
      //Function for winner check
@@ -30,12 +32,12 @@
      var round = 0;                                             //set round to begin at 0
      function fight() {
 
-         //This alert starts the fight sequence
+         //This alert starts the fight sequence, element 0 refers to player name, 1 refers to player health
          alert(playerOne[0] + ":" + playerOne[1] + " ** Start ** " + playerTwo[0] + ":" + playerTwo[1]);
          console.log(" ** Fight! ** ");
          for (var i = 0; i < 10; i++) {                  //loop to run until duel ends
 
-             //How bad does it hurt this round?
+             //How bad does it hurt this round? Array element 2 refers to max damage, 3 refers to min damage
              var playerOneHit = Math.floor(Math.random() * (playerOne[2] - playerOne[3]) + playerOne[3]);
              var playerTwoHit = Math.floor(Math.random() * (playerTwo[2] - playerTwo[3]) + playerTwo[3]);
 
