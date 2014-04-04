@@ -56,6 +56,11 @@
         alert(playerOneName + ": " + playerOneHealth + " ** Round " + round + " Over ** " + playerTwoName + ": " + playerTwoHealth);
 
         winnerCheck();                                      //Are we done here?
+        if (winner != "Fight in Progress"){
+            console.log(winner);
+            alert(winner);
+            break;
+        }
     }
 
     alert(winner);                                          //Someone died.
