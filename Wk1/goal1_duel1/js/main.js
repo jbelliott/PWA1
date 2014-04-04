@@ -8,13 +8,15 @@
 
  var playerOneName = "Spiderman";
  var playerOneHealth = 100;
- var playerOneDamage = 50;
+ var playerOneMaxDamage = 30;
+ var playerOneMinDamage = 15;
 
  //Define Starting Variables, Player Two
 
  var playerTwoName = "Batman";
- var playerTwoHealth - 100;
- var playerTwoDamage = 50;
+ var playerTwoHealth = 100;
+ var playerTwoMaxDamage = 30;
+ var playerTwoMinDamage = 15;
 
  //Function for winner check
 
@@ -38,13 +40,23 @@
     //This alert starts the fight sequence
     alert(playerOneName + ":" + playerOneHealth + " ** Start ** " + playerTwoName + ":" + playerTwoHealth);
 
-    while(winner === "Fight in Progress"){                  //loop to run until winner variable changes
+    for(var i = 0; i < 10; i++){                  //loop to run until duel ends
 
+        //How bad does it hurt this round?
+        var playerOneHit = Math.floor(Math.random() * (playerOneMaxDamage - playerOneMinDamage) + playerOneMinDamage);
+        var playerTwoHit = Math.floor(Math.random() * (playerTwoMaxDamage - playerTwoMinDamage) + playerTwoMinDamage);
 
-        alert(playerOneName + ": " + playerOneHealth + " ** Round " + round + " Over ** " + playerTwoName + ": " + playerTwoHealth);
+        //Apply the damage
+        playerOneHealth -= playerOneHit;
+        playerTwoHealth -= playerTwoHit;
         round++;
-        winnerCheck();
+
+        //Show it in the console and alert
+        console.log(playerOneName + ": " + playerOneHealth + " ** Round " + round + " Over ** " + playerTwoName + ": " playerTwoHealth);
+        alert(playerOneName + ": " + playerOneHealth + " ** Round " + round + " Over ** " + playerTwoName + ": " + playerTwoHealth);
+
+        winnerCheck();                                      //Are we done here?
     }
 
-    alert(winner);
+    alert(winner);                                          //Someone died.
  }
