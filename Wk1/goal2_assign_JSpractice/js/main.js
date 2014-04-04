@@ -102,11 +102,26 @@
     console.log(vowelsInWord('JavaScript'));
 
     //--------------------------------------------------------
- //   console.log("6. find number and create an array of even or odd numbers");
+    console.log("6. find number and create an array of even or odd numbers");
 
-        //PUT FUNCTION HERE
+        function findNum(array, bool) {
+            var result = [];
+            if (bool == false || bool === null) {
+                for (var i = 0; i < array.length; i++) {
+                    if (array[i] % 2 !== 0) {
+                        result.push(array[i]);
+                    }
+                }
+            } else {
+                for (var i = 0; i < array.length; i++) {
+                    if (array[i] % 2 === 0) {
+                        result.push(array[i]);
+                    }
+                }
+            }return result;
+        }
 
-  //  console.log(findNum([31,22,4,67,83,6,5,4]));
-  //  console.log(findNum([31,22,4,67,83,6,5,4], false));
+    console.log(findNum([31,22,4,67,83,6,5,4]));
+    console.log(findNum([31,22,4,67,83,6,5,4], false));
 
 })();
