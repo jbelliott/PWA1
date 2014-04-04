@@ -58,7 +58,7 @@
              winnerCheck();                                      //Everyone still standing?
              if (winner != "Fight in Progress") {
                  console.log(winner);
-                 alert(winner);
+                
                  break;
              }
          }
