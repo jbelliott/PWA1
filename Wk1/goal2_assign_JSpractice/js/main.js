@@ -91,10 +91,15 @@
     console.log(charCount(ipsum));
 
     //--------------------------------------------------------
-//
-        //PUT FUNCTION HERE
+    console.log("5. vowelsInWord");
 
-  //  console.log(vowelsInWord('JavaScript'));
+        function vowelsInWord(inputCheck){
+            var vowels = inputCheck.match(/[aeiou]/g);
+            var vowelCount = vowels.length;
+            return vowelCount;
+        }
+
+    console.log(vowelsInWord('JavaScript'));
 
     //--------------------------------------------------------
  //   console.log("6. find number and create an array of even or odd numbers");
