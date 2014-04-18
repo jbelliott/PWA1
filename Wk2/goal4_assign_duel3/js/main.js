@@ -23,9 +23,12 @@
              winner = "Both Duelists have died.";
          } else if (playerTwo.health <= 0) {                       //if not, is player two dead?
              winner = playerOne.name + " is the winner!";
+
          } else if (playerOne.health <= 0) {                        //if not, is player one dead?
              winner = playerTwo.name + " is the winner!";
+
          }
+
          return winner;                                         //send result to variable "winner"
      }
 
@@ -35,9 +38,9 @@
      function fight() {
 
          //This alert starts the fight sequence.
-         alert(playerOne.name + ":" + playerOne.health + " ** Start ** " + playerTwo.name + ":" + playerTwo.health);
+
          console.log(" ** Fight! ** ");
-         for (var i = 0; i < 10; i++) {                  //loop to run until duel ends
+                          //loop to run until duel ends
 
              //How bad does it hurt this round? Array element 2 refers to max damage, 3 refers to min damage
              var playerOneHit = Math.floor(Math.random() * (playerOne.damage.maxDmg - playerOne.damage.minDmg) + playerOne.damage.minDmg);
@@ -48,19 +51,31 @@
              playerTwo.health -= playerTwoHit;
              round++;
 
+            document.getElementById("round").innerHTML = "Round " + round + " Complete!";
+            document.getElementById("kabal").innerHTML = playerOne.name + " : " + playerOne.health;
+            document.getElementById("kratos").innerHTML = playerTwo.name + " : " + playerTwo.health;
+
              //Show it in the console and alert
              console.log(playerOne.name + ": " + playerOne.health + " ** Round " + round + " Over ** " + playerTwo.name + ": " + playerTwo.health);
-             alert(playerOne.name + ": " + playerOne.health + " ** Round " + round + " Over ** " + playerTwo.name + ": " + playerTwo.health);
+
 
              winnerCheck();                                      //Everyone still standing?
-             if (winner != "Fight in Progress") {
-                 console.log(winner);
+         if (round < 10){
 
-                 break;
-             }
+
+         if (winner != "Fight in Progress") {
+                 console.log(winner);
+                 document.getElementById("scores").innerHTML = winner;
+
+
+             }else{
+         }
          }
 
-         alert(winner);                                          //Someone died...
+
+
+
+
      }
 
  //To start it all off
