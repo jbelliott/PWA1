@@ -64,5 +64,5 @@
      }
 
  //To start it all off
- fight();
+ //fight();
 
