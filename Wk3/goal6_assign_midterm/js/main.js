@@ -80,10 +80,15 @@
         passAddy(event);
         passGPA(event);
         document.getElementById("date").innerHTML = "Date: " + localDate.toLocaleDateString();
-
-        
-
+        console.log("Date: " + localDate.toLocaleDateString());
+        console.log("-------------------");
         event++;
+        //This disables the button when the maximum number of clicks is reached.
+        if (event > 2){
+            document.getElementById("button").innerHTML = "Done!";
+            console.log("No more entries to display.");
+            this.onclick=null;
+        }
 
     };
 
@@ -93,10 +98,13 @@
 
         if (counter == 0) {
             document.getElementById("name").innerHTML = "Name: " + stu.name1;
+            console.log("Name: " + stu.name1);
         } else if (counter == 1) {
             document.getElementById("name").innerHTML = "Name: " + stu.name2;
-        } else {
+            console.log("Name: " + stu.name2);
+        } else if (counter ==2) {
             document.getElementById("name").innerHTML = "Name: " + stu.name3;
+            console.log("Name: " + stu.name3);
         }
     }
     //This function utilizes the event variable as a counter to determine which block of code is going to be called.
@@ -105,10 +113,13 @@
 
         if (counter == 0) {
             document.getElementById("address").innerHTML = "Address: " + stu.addy1.street1 + ", " + stu.addy1.city1 + ", " + stu.addy1.state1;
+            console.log("Address: " + stu.addy1.street1 + ", " + stu.addy1.city1 + ", " + stu.addy1.state1);
         } else if (counter == 1) {
             document.getElementById("address").innerHTML = "Address: " + stu.addy2.street2 + ", " + stu.addy2.city2 + ", " + stu.addy2.state2;
-        } else {
+            console.log("Address: " + stu.addy2.street2 + ", " + stu.addy2.city2 + ", " + stu.addy2.state2);
+        } else if (counter ==2) {
             document.getElementById("address").innerHTML = "Address: " + stu.addy3.street3 + ", " + stu.addy3.city3 + ", " + stu.addy3.state3;
+            console.log("Address: " + stu.addy3.street3 + ", " + stu.addy3.city3 + ", " + stu.addy3.state3);
         }
     }
 
@@ -118,13 +129,23 @@
 
         if (counter == 0) {
             document.getElementById("gpa").innerHTML = "GPA: " + stu.gpa1[0] + ", " + stu.gpa1[1] + ", " + stu.gpa1[2];
+            console.log("GPA: " + stu.gpa1[0] + ", " + stu.gpa1[1] + ", " + stu.gpa1[2]);
+            document.getElementById("gpaavg").innerHTML = "GPA Avg: " + gpaAverage(stu.gpa1);
+            console.log("GPA Avg: " + gpaAverage(stu.gpa1));
         } else if (counter == 1) {
             document.getElementById("gpa").innerHTML = "GPA: " + stu.gpa2[0] + ", " + stu.gpa2[1] + ", " + stu.gpa2[2];
-        } else {
+            console.log("GPA: " + stu.gpa2[0] + ", " + stu.gpa2[1] + ", " + stu.gpa2[2]);
+            document.getElementById("gpaavg").innerHTML = "GPA Avg: " + gpaAverage(stu.gpa2);
+            console.log("GPA Avg: " + gpaAverage(stu.gpa2));
+        } else if (counter ==2) {
             document.getElementById("gpa").innerHTML = "GPA: " + stu.gpa3[0] + ", " + stu.gpa3[1] + ", " + stu.gpa3[2];
+            console.log("GPA: " + stu.gpa3[0] + ", " + stu.gpa3[1] + ", " + stu.gpa3[2]);
+            document.getElementById("gpaavg").innerHTML = "GPA Avg: " + gpaAverage(stu.gpa3);
+            console.log("GPA Avg: " + gpaAverage(stu.gpa3));
         }
     }
 
 
 //
+
 })();
