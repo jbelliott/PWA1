@@ -1,16 +1,18 @@
  /* Created by JB Elliott
- Due April 3, 2014
- The Duel - Part II
+ Due April 17, 2014
+ The Duel - Part III
  */
 
-     //Define Starting Variables, Player One, Array
-     //Array values are [name, health, max dmg, min dmg]
-     var playerOne = ["Spiderman", 100, 30, 15];
+     //Define Starting Variables, Player One, Object Array
+     //Object values assigned for name, starting health, then an embedded object containing values for min and max dmg
+     //Name of Player One changed from Spiderman to Maskman so the HTML file picture makes more sense
+     var playerOne = {"name":"Maskman","health":100, "damage":{"minDmg":15, "maxDmg":30}};
 
 
      //Define Starting Variables, Player Two, Array
-     //Array values are [name, health, max dmg, min dmg]
-     var playerTwo = ["Batman", 100, 30, 15];
+     //Object values assigned for name, starting health, then an embedded object containing values for min and max dmg
+     //Name of Player Two changed from Batman to Beardman so the HTML file picture makes more sense
+     var playerTwo = {"name":"Beardman","heath":100,"damage":{"minDmg":30, "maxDmg":15}};
 
      //Function for winner check
 
