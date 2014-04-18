@@ -12,19 +12,19 @@
      //Define Starting Variables, Player Two, Array
      //Object values assigned for name, starting health, then an embedded object containing values for min and max dmg
      //Name of Player Two changed from Batman to Beardman so the HTML file picture makes more sense
-     var playerTwo = {"name":"Beardman","heath":100,"damage":{"minDmg":30, "maxDmg":15}};
+     var playerTwo = {"name":"Beardman","health":100,"damage":{"minDmg":30, "maxDmg":15}};
 
      //Function for winner check
 
      var winner = "Fight in Progress";
 
      function winnerCheck() {                                    //checks to see if the duel will continue
-         if (playerOne[1] <= 0 && playerTwo[1] <= 0) {     //are both players dead?
+         if (playerOne.health <= 0 && playerTwo.health <= 0) {     //are both players dead?
              winner = "Both Duelists have died.";
-         } else if (playerTwo[1] <= 0) {                       //if not, is player two dead?
-             winner = playerOne[0] + " is the winner!";
-         } else if (playerOne[1] <= 0) {                        //if not, is player one dead?
-             winner = playerTwo[0] + " is the winner!";
+         } else if (playerTwo.health <= 0) {                       //if not, is player two dead?
+             winner = playerOne.name + " is the winner!";
+         } else if (playerOne.health <= 0) {                        //if not, is player one dead?
+             winner = playerTwo.name + " is the winner!";
          }
          return winner;                                         //send result to variable "winner"
      }
@@ -34,23 +34,23 @@
      var round = 0;                                             //set round to begin at 0
      function fight() {
 
-         //This alert starts the fight sequence, element 0 refers to player name, 1 refers to player health
-         alert(playerOne[0] + ":" + playerOne[1] + " ** Start ** " + playerTwo[0] + ":" + playerTwo[1]);
+         //This alert starts the fight sequence.
+         alert(playerOne.name + ":" + playerOne.health + " ** Start ** " + playerTwo.name + ":" + playerTwo.health);
          console.log(" ** Fight! ** ");
          for (var i = 0; i < 10; i++) {                  //loop to run until duel ends
 
              //How bad does it hurt this round? Array element 2 refers to max damage, 3 refers to min damage
-             var playerOneHit = Math.floor(Math.random() * (playerOne[2] - playerOne[3]) + playerOne[3]);
-             var playerTwoHit = Math.floor(Math.random() * (playerTwo[2] - playerTwo[3]) + playerTwo[3]);
+             var playerOneHit = Math.floor(Math.random() * (playerOne.damage.maxDmg - playerOne.damage.minDmg) + playerOne.damage.minDmg);
+             var playerTwoHit = Math.floor(Math.random() * (playerTwo.damage.maxDmg - playerTwo.damage.minDmg) + playerTwo.damage.minDmg);
 
              //Apply the damage
-             playerOne[1] -= playerOneHit;
-             playerTwo[1] -= playerTwoHit;
+             playerOne.health -= playerOneHit;
+             playerTwo.health -= playerTwoHit;
              round++;
 
              //Show it in the console and alert
-             console.log(playerOne[0] + ": " + playerOne[1] + " ** Round " + round + " Over ** " + playerTwo[0] + ": " + playerTwo[1]);
-             alert(playerOne[0] + ": " + playerOne[1] + " ** Round " + round + " Over ** " + playerTwo[0] + ": " + playerTwo[1]);
+             console.log(playerOne.name + ": " + playerOne.health + " ** Round " + round + " Over ** " + playerTwo.name + ": " + playerTwo.health);
+             alert(playerOne.name + ": " + playerOne.health + " ** Round " + round + " Over ** " + playerTwo.name + ": " + playerTwo.health);
 
              winnerCheck();                                      //Everyone still standing?
              if (winner != "Fight in Progress") {
