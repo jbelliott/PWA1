@@ -5,47 +5,7 @@
 */
 
 
-//(function(){
 
-//Define the student variable and assign values for two students to start with
-
-
-    /*var stu = {};
-
-
-    var newStu = {};
-    newStu.name = "Luke Skywalker";
-    newStu.addy = {};
-    newStu.addy.street = "5921 Echo Lake Way";
-    newStu.addy.city = "Celebration";
-    newStu.addy.state = "FL";
-    newStu.newGpa = [4.0, 4.0, 3.5];
-    */
-
-
-
-
-
-/*
-//When called, this function will add the values from the newStu object to the classList object under stu3
-//Alternatively, we could use a push command to add to an object as well
-
-    function addDate(name, newAddy1, newAddy2, newAddy3, grades) {
-
-
-        stu.name3 = name;
-        stu.addy3 = {};
-        stu.addy3.street3 = newAddy1;
-        stu.addy3.city3 = newAddy2;
-        stu.addy3.state3 = newAddy3;
-        stu.gpa3 = grades;
-
-
-    }
-
-
-    addDate(newStu.name, newStu.addy.street, newStu.addy.city, newStu.addy.state, newStu.newGpa);
-*/
 //This function will take the array of values from the GPA field and return the average score
 //The average score is fixed to 2 decimal places
 
