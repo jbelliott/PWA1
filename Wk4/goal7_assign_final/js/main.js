@@ -10,7 +10,7 @@
 //Define the student variable and assign values for two students to start with
 
 
-    var stu = {};
+    /*var stu = {};
 
     stu.name1 = "Gomer Pyle";
     stu.addy1 = {};
@@ -34,7 +34,30 @@
     newStu.addy.city = "Celebration";
     newStu.addy.state = "FL";
     newStu.newGpa = [4.0, 4.0, 3.5];
+    */
 
+    //Changing student object to a constructor
+
+    var StudentInfo = function(name, street, cityState, gpa){
+        this.studentName = name;
+        this.studentStreet = street;
+        this.studentCity = cityState;
+        this.studentGPA = gpaAverage(gpa);
+
+
+
+    };
+
+    //Information to pass to the constructor
+    var students = [
+        new StudentInfo("Gomer Pyle", "123 Sesame St", "Orlando, FL", [2.5, 3.0, 3.0]),
+        new StudentInfo("Fred Durst", "404 Internet Blvd", "Miami, FL", [3.5, 4.0, 3.5])
+
+
+    ];
+
+
+/*
 //When called, this function will add the values from the newStu object to the classList object under stu3
 //Alternatively, we could use a push command to add to an object as well
 
@@ -51,8 +74,9 @@
 
     }
 
-    addDate(newStu.name, newStu.addy.street, newStu.addy.city, newStu.addy.state, newStu.newGpa);
 
+    addDate(newStu.name, newStu.addy.street, newStu.addy.city, newStu.addy.state, newStu.newGpa);
+*/
 //This function will take the array of values from the GPA field and return the average score
 //The average score is fixed to 2 decimal places
 
@@ -66,7 +90,7 @@
         arrayAvg = arrayAvg.toFixed(2);
         return arrayAvg;
     }
-
+/*
 //This is the function activated by the event button on the HTML page. It basically cycles through the student records
 //until it has reached the end, then disables the event button.
 
@@ -145,7 +169,7 @@
         }
     }
 
-
+*/
 //
 
 })();
